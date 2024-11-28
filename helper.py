@@ -6,7 +6,7 @@ from fuzzywuzzy import fuzz
 import pickle
 import numpy as np
 from gensim.models import Word2Vec
-# w2v_model = pickle.load(open('w2v.pkl','rb'))
+
 w2v_model = Word2Vec.load("w2v.pkl")
 
 

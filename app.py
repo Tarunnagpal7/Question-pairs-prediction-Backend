@@ -15,7 +15,6 @@ with open('model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 
-
 # Route for predictions
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -32,14 +31,7 @@ def predict():
     prediction = prediction.tolist() if hasattr(prediction, 'tolist') else prediction
     return jsonify({'prediction': prediction})
 
-# # Ensure OPTIONS requests are handled
-# @app.route('/predict', methods=['OPTIONS'])
-# def options_handler():
-#     response = jsonify({"message": "CORS preflight successful"})
-#     response.headers.add("Access-Control-Allow-Headers", "Content-Type,Authorization")
-#     response.headers.add("Access-Control-Allow-Methods", "POST, OPTIONS")
-#     response.headers.add("Access-Control-Allow-Origin", "*")  # Replace "*" with specific origins for production
-#     return response
+
 
 if __name__ == '__main__':
      app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
