@@ -7,7 +7,7 @@ import sklearn
 import os
 
 app = Flask(__name__)
-CORS(app)  # Allow requests from frontend
+CORS(app, resources={r"/predict/*": {"origins": "*"}})  # Allow requests from frontend
 
 # Load model
 with open('model.pkl', 'rb') as f:
