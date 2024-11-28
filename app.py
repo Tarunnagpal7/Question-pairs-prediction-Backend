@@ -7,7 +7,22 @@ import sklearn
 import os
 
 app = Flask(__name__)
-CORS(app, resources={r"/predict/*": {"origins": "*"}})  # Allow requests from frontend
+
+CORS(app, resources={
+    r"/predict/*": {
+        "origins": [
+            "https://question-pairs-prediction-ui.vercel.app",
+            "https://question-pairs-prediction-jvhzgpcrc-taruns-projects-a1a2242e.vercel.app",
+            "http://localhost:5173"  # Add local development URL if needed
+        ],
+        "methods": ["GET", "POST", "OPTIONS"],
+        "allow_headers": [
+            "Content-Type", 
+            "Authorization", 
+            "Access-Control-Allow-Credentials"
+        ]
+    }
+})
 
 # Load model
 with open('model.pkl', 'rb') as f:
