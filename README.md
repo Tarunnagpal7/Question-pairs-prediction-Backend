@@ -49,15 +49,17 @@ Ensure you have the following installed:
     ```bash
         pip install -r requirements.txt
 
-4.**Add your model file**:
- Place the pre-trained model file (model.pkl or equivalent) in the model/ directory.
+4. **Add your model file**:
 
-5. **Run the server**:
+   Place the pre-trained model file (model.pkl or equivalent) in the model/ directory.
+
+6. **Run the server**:
    ```bash
      python app.py
 
-6. **Access the API**:
- The API will be available at http://127.0.0.1:5000/predict.
+7. **Access the API**:
+   
+   The API will be available at http://127.0.0.1:5000/predict.
 
 # API Documentation
 
